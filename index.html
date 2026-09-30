@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YUDHANIA.AI — Staff Design Workspace</title>
+<style>
+:root{--bg:#f5f3ef;--panel:#fff;--ink:#171717;--muted:#706d67;--line:#e6e1d9;--accent:#111;--soft:#eeebe5;--ok:#e8f3e9;--warn:#fff4dc;--danger:#fbe9e8;--shadow:0 14px 40px rgba(20,18,15,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}.app{max-width:1440px;margin:auto;padding:24px}.top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:22px}.brand{font-weight:800;letter-spacing:.08em}.brand small{display:block;color:var(--muted);font-weight:500;letter-spacing:0;margin-top:4px}.status{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:12px}.dot{width:8px;height:8px;border-radius:50%;background:#2e7d32}.grid{display:grid;grid-template-columns:360px minmax(420px,1fr) 390px;gap:16px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}.head{padding:18px 20px;border-bottom:1px solid var(--line)}.head h2{font-size:15px;margin:0 0 3px}.head p{margin:0;color:var(--muted);font-size:12px}.body{padding:18px 20px}.field{margin-bottom:15px}.field label{display:block;font-weight:700;font-size:12px;margin-bottom:7px}.req{color:#a22}.hint{font-size:11px;color:var(--muted);margin-top:5px}textarea,input,select{width:100%;border:1px solid var(--line);background:#fcfbf9;border-radius:11px;padding:10px 11px;outline:none}textarea:focus,input:focus,select:focus{border-color:#aaa}.brief{min-height:270px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{padding:6px 9px;border-radius:999px;background:var(--soft);font-size:11px}.drop{border:1px dashed #cfc8bd;padding:16px;border-radius:12px;text-align:center;color:var(--muted);background:#fbfaf8}.drop input{display:none}.drop strong{display:block;color:var(--ink);margin-bottom:3px}.primary{width:100%;padding:12px 15px;border-radius:11px;background:#111;color:white;font-weight:800}.secondary{padding:9px 11px;border-radius:10px;background:var(--soft);font-weight:700}.actions{display:flex;gap:8px}.actions>*{flex:1}.summary{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{border:1px solid var(--line);border-radius:11px;padding:10px;background:#fcfbf9}.metric span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.07em}.metric b{display:block;margin-top:3px;font-size:12px}.section{margin-bottom:20px}.section h3{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 9px}.direction{white-space:pre-wrap;font-size:12px;background:#faf9f7;border:1px solid var(--line);border-radius:12px;padding:12px}.prompt{min-height:240px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px}.negative{min-height:110px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px}.empty{padding:28px 10px;text-align:center;color:var(--muted)}.revision{min-height:95px}.notice{padding:10px 12px;border-radius:10px;font-size:11px;margin-bottom:12px}.notice.ok{background:var(--ok)}.notice.warn{background:var(--warn)}.notice.danger{background:var(--danger)}.footer{margin-top:16px;color:var(--muted);font-size:11px;text-align:center}.locked{display:inline-flex;align-items:center;gap:5px;background:#f1eee9;padding:5px 8px;border-radius:999px;font-size:10px}.previewWrap{background:#e9e5de;border:1px solid var(--line);border-radius:14px;padding:10px;overflow:hidden}.previewWrap canvas{display:block;width:100%;height:auto;border-radius:10px}.preview{aspect-ratio:9/16;border-radius:14px;background:linear-gradient(145deg,#202020,#777);display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;padding:24px;margin-bottom:10px}.preview strong{font-size:24px;line-height:1.05}.hidden{display:none!important}@media(max-width:1100px){.grid{grid-template-columns:1fr 1fr}.panel:last-child{grid-column:1/-1}}@media(max-width:760px){.app{padding:12px}.grid{grid-template-columns:1fr}.top{flex-direction:column}.panel:last-child{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div><div class="brand">YUDHANIA.AI</div><small>Staff Design Workspace · Art Direction Engine</small></div>
+    <div class="status"><i class="dot"></i> Design Engine ready</div>
+  </header>
+
+  <main class="grid">
+    <section class="panel">
+      <div class="head"><h2>01 · Brief Klien</h2><p>Masukkan brief mentah. Jangan rapikan dulu.</p></div>
+      <div class="body">
+        <div class="field"><label>Brief mentah <span class="req">*</span></label><textarea id="brief" class="brief" placeholder="Contoh:\nNama usaha: GadgetWaw\nPromo opening toko, diskon 70%\nFormat story 9:16\nDark & sinematik, putih & beige\nWA 0857...\nInstagram gadgetwaw\nTiktok gadgetwaw"></textarea></div>
+        <div class="field"><label>Asset / reference</label><label class="drop"><input id="assets" type="file" multiple accept="image/*,.pdf,.doc,.docx"><strong>Tambahkan foto produk, logo, atau reference</strong>Asset diperlakukan sebagai sumber identitas utama.</label><div id="assetList" class="hint"></div></div>
+        <div class="two">
+          <div class="field"><label>Format</label><select id="format"><option value="auto">Otomatis</option><option>Instagram Story 9:16</option><option>Instagram Feed 4:5</option><option>Square 1:1</option><option>Landscape 16:9</option><option>Poster 2:3</option><option>Flyer 4:5</option><option>Marketplace</option><option>YouTube Thumbnail 16:9</option></select></div>
+          <div class="field"><label>Style</label><select id="style"><option value="auto">Otomatis</option><option>Clean & Modern</option><option>Premium Commercial</option><option>Luxury Minimal</option><option>Bold & Dynamic</option><option>Elegant & Refined</option><option>Cinematic</option><option>Editorial</option><option>Playful</option><option>Fun & Colorful</option><option>Natural & Organic</option><option>Futuristic</option><option>Street / Urban</option><option>Corporate Professional</option><option>Hyperreal Product</option></select></div>
+        </div>
+        <div class="field"><label>Catatan staf</label><textarea id="staff" rows="3" placeholder="Preferensi internal atau catatan produksi. Tidak boleh mengubah fakta klien."></textarea></div>
+        <button id="analyze" class="primary">Analisis Brief → Susun Art Direction</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="head"><h2>02 · Art Direction</h2><p>Keputusan otomatis mengikuti Design Knowledge.</p></div>
+      <div class="body">
+        <div id="empty" class="empty">Masukkan brief lalu klik <b>Analisis Brief</b>.</div>
+        <div id="result" class="hidden">
+          <div id="notice" class="notice ok">Brief cukup. Keputusan desain dapat dibuat tanpa mengarang fakta.</div>
+          <div class="summary" id="summary"></div>
+          <div class="section"><h3>Creative Direction</h3><div id="direction" class="direction"></div></div>
+          <div class="section"><h3>Design Decision Log</h3><div id="decisions" class="direction"></div></div>
+          <div class="section"><h3>Locked Facts</h3><div id="facts" class="chips"></div></div>
+          <div class="section"><h3>Generation Prompt</h3><textarea id="prompt" class="prompt" readonly></textarea></div>
+          <div class="section"><h3>Dynamic Negative Prompt</h3><textarea id="negative" class="negative" readonly></textarea></div>
+          <div class="actions"><button id="copyPrompt" class="secondary">Copy Prompt</button><button id="copyAll" class="secondary">Copy Paket</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="head"><h2>03 · Generate & Revision</h2><p>Workspace untuk output pertama dan revisi surgical.</p></div>
+      <div class="body">
+        <div id="preview" class="preview"><strong>DESIGN<br>READY</strong></div>
+        <div class="notice warn">Image generation provider belum dipasang di browser MVP ini. Prompt yang dihasilkan sudah siap dikirim ke generation boundary.</div>
+        <div class="section"><h3>Generated Design</h3>
+        <div id="genStatus" class="notice warn">Belum ada desain yang di-generate.</div>
+        <div class="previewWrap"><canvas id="designCanvas" width="1080" height="1920"></canvas></div>
+        <div class="actions"><button id="generate" class="primary" type="button">Generate Design</button><button id="downloadDesign" class="secondary" type="button" disabled>Download PNG</button></div>
+        <div class="hint">Generate lokal ini membuat visual poster nyata dari brief yang sudah dianalisis. Ini bukan koneksi ke model gambar eksternal.</div>
+      </div>
+      <div class="section"><h3>Revision Request</h3><textarea id="revision" class="revision" placeholder="Contoh: Font headline terlalu generic. Pertahankan layout, produk, warna, dan hierarki; ubah hanya personality typography."></textarea></div>
+        <div class="actions"><button id="applyRevision" class="primary">Susun Surgical Revision</button></div>
+        <div id="revisionOut" class="section hidden"><h3>Revision Lock</h3><div id="revisionText" class="direction"></div></div>
+      </div>
+    </section>
+  </main>
+  <div class="footer">Different designs. Same studio DNA. · Purpose before decoration · One primary focal point · No invented client facts.</div>
+</div>
+<script>
+const $=id=>document.getElementById(id), clean=s=>(s||'').replace(/\s+/g,' ').trim();
+const lower=s=>clean(s).toLowerCase();
+const pick=(text,rx)=>{const m=text.match(rx);return m?clean(m[1]):''};
+const esc=s=>String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+
+function infer(text){
+ const t=lower(text);
+ let category='';
+ if(/gadget|teknologi|technology|hp|smartphone|laptop|tablet|mouse|keyboard|elektronik/.test(t)) category='Technology';
+ else if(/seblak|makanan|kuliner|food|minuman|kopi|cafe|kedai|resto/.test(t)) category='F&B';
+ else if(/sekolah|smk|sma|kampus|pendidikan|edukasi|ppdb/.test(t)) category='Education';
+ else if(/baju|fashion|outfit|hijab|pakaian/.test(t)) category='Fashion';
+ else if(/mobil|motor|otomotif|dealer/.test(t)) category='Automotive';
+ else if(/rumah|property|properti|cluster|villa/.test(t)) category='Property';
+ else if(/event|wedding|nikah|acara/.test(t)) category='Event';
+ else if(/skincare|beauty|kosmetik|serum|makeup/.test(t)) category='Beauty & Skincare';
+ else if(/jasa|service|layanan|transportasi|antar jemput|agency/.test(t)) category='Service / Business';
+ else category='Retail / Product';
+ let objective='Product Promotion';
+ if(/opening|grand opening|buka toko|launching|launch/.test(t)) objective='Grand Opening';
+ else if(/diskon|discount|sale|promo|potongan/.test(t)) objective='Discount / Sale';
+ else if(/event|acara|wedding/.test(t)) objective='Event Promotion';
+ else if(/pengumuman|announcement/.test(t)) objective='Announcement';
+ else if(/ppdb|pendaftaran|rekrut/.test(t)) objective='Recruitment';
+ let style=$('style').value;
+ if(style==='auto'){
+   if(/dark|sinematik|cinematic/.test(t)) style='Cinematic';
+   else if(/premium|mewah|luxury/.test(t)) style='Premium Commercial';
+   else if(/bold|berani|mencolok|intens/.test(t)) style='Bold & Dynamic';
+   else if(/clean|profesional|professional/.test(t)) style='Clean & Modern';
+   else style=category==='Education'?'Clean & Modern':'Premium Commercial';
+ }
+ let format=$('format').value;
+ if(format==='auto'){
+   if(/story|status|9:?16/.test(t)) format='Instagram Story 9:16';
+   else if(/feed|4:?5/.test(t)) format='Instagram Feed 4:5';
+   else format='Instagram Story 9:16';
+ }
+ let intensity='V2 — Balanced';
+ if(/grand opening|diskon|sale|bold|berani|intens|promo/.test(t)) intensity='V3 — Energetic';
+ if(/high impact|massive|heboh|maksimal/.test(t)) intensity='V4 — High Impact';
+ const hero=category==='Technology'?'product / device as primary focal point':category==='F&B'?'hero food / beverage texture':category==='Education'?'learning activity / information':'hero product or service result';
+ const composition=category==='Technology'?'clean geometry, product-dominant, controlled asymmetry':category==='F&B'?'product-dominant close/medium shot, appetizing crop':'single hero with clear information hierarchy and intentional negative space';
+ const lighting=category==='Technology'?'precise studio lighting':category==='F&B'?'bright commercial food lighting':'controlled commercial lighting appropriate to subject';
+ const material=category==='Technology'?'glass, aluminum, matte plastic, screens':category==='F&B'?'realistic food texture, moisture, pores, crispness':'believable real-world materials';
+ const typo=style==='Bold & Dynamic'?'bold grotesk / condensed display with strong hierarchy':style==='Cinematic'?'cinematic display / restrained editorial display':style==='Premium Commercial'?'refined grotesk with controlled display hierarchy':style==='Clean & Modern'?'precise contemporary sans / humanist sans':'characterful display selected from brand + objective';
+ const decoration=category==='Technology'?'D1 — subtle, product/environment-derived':category==='F&B'?'D1–D2 — product-derived texture only when useful':'D1 — restrained, contextual support';
+ return {category,objective,style,format,intensity,hero,composition,lighting,material,typo,decoration};
+}
+function facts(text){
+ const arr=[]; const patterns=[['Brand',/(?:nama usaha|nama brand|brand|merek)\s*[:=-]\s*([^\n]+)/i],['Product/Service',/(?:produk|product|jasa|layanan)\s*[:=-]\s*([^\n]+)/i],['WhatsApp',/(?:wa|whatsapp|nomor whatsapp|kontak)\s*[:=-]\s*([^\n]+)/i],['Instagram',/(?:instagram|ig)\s*[:=-]\s*([^\n]+)/i],['TikTok',/(?:tiktok|tt)\s*[:=-]\s*([^\n]+)/i],['Harga/Promo',/(?:harga|diskon|promo)\s*[:=-]\s*([^\n]+)/i],['Tanggal',/(?:tanggal|berlaku|periode)\s*[:=-]\s*([^\n]+)/i]];
+ for(const [n,r] of patterns){const v=pick(text,r);if(v)arr.push(n+': '+v)}
+ return arr;
+}
+function render(){
+ const text=$('brief').value.trim(); if(!text)return alert('Brief klien belum diisi.');
+ const d=infer(text), fs=facts(text); const hasFacts=/\b(nama|brand|usaha|produk|jasa|promo|diskon|wa|whatsapp|instagram|tiktok|alamat|tanggal|berlaku)\b/i.test(text);
+ $('empty').classList.add('hidden');$('result').classList.remove('hidden');
+ $('notice').className='notice '+(hasFacts?'ok':'warn');$('notice').textContent=hasFacts?'Brief cukup. Keputusan desain dapat dibuat tanpa mengarang fakta.':'Brief masih umum. Engine membuat keputusan visual, tetapi tidak akan mengarang fakta klien.';
+ const rows=[['Category',d.category],['Objective',d.objective],['Style',d.style],['Format',d.format],['Intensity',d.intensity],['Decoration',d.decoration]];
+ $('summary').innerHTML=rows.map(x=>`<div class="metric"><span>${esc(x[0])}</span><b>${esc(x[1])}</b></div>`).join('');
+ $('direction').textContent=`Concept: ${d.objective.toLowerCase()} dengan ${d.hero} sebagai titik fokus utama.\nHero: ${d.hero}\nMood: ${d.style}\nComposition: ${d.composition}\nVisual Intensity: ${d.intensity}\nCamera: ${d.category==='Technology'?'medium product/environmental, controlled perspective':'commercial framing sesuai subject, controlled perspective'}\nLighting: ${d.lighting}\nMaterial: ${d.material}\nColor: ${/putih|beige/i.test(text)?'white + beige (client preference)':'brand/context-led palette; jangan mengarang warna brand'}\nDecoration: ${d.decoration}\nNegative Space: intentional safe area untuk copy utama, terutama format mobile.\nTypography: ${d.typo}`;
+ $('decisions').textContent=`Focal Point: ${d.hero}\nVisual Intensity: ${d.intensity}\nDecoration: ${d.decoration}\nGlow: G0 unless concept requires otherwise\nParticles: P0\nSplash: S0 unless product-derived and justified\nCamera: ${d.category==='Technology'?'medium / controlled perspective':'commercial contextual framing'}\nLighting: ${d.lighting}\nNegative Space: intentional\nText Density: concise, hierarchy-first\nTypography Personality: ${d.typo}\nReason for automatic choices: category + objective + format, not random styling.`;
+ $('facts').innerHTML=(fs.length?fs:['Tidak ada fakta terstruktur yang berhasil diekstrak; pertahankan seluruh copy mentah persis saat produksi.']).map(x=>`<span class="chip">${esc(x)}</span>`).join('');
+ const copy=text.replace(/\s+/g,' ').trim();
+ const prompt=`High-quality commercial design. ${d.objective} concept with ${d.hero} as the single primary focal point. Subject/product: use the client-provided subject and preserve its identity exactly. Category: ${d.category}. Style: ${d.style}. Objective: ${d.objective}. Composition: ${d.composition}, clear hierarchy, intentional negative space. Format: ${d.format}, mobile-first safe zones where applicable. Camera: ${d.category==='Technology'?'medium product/environmental, controlled perspective':'commercial framing appropriate to subject'}. Lighting: ${d.lighting}. Material: ${d.material}. Color: ${/putih|beige/i.test(text)?'white and beige, as specified by client':'use only colors supported by the brief/reference; do not invent brand colors'}. Typography/Copy: preserve exact client copy from brief; ${d.typo}; readable hierarchy. Brand: preserve all client brand identity, logo, packaging, product proportions, and identifying details. Master rules: purpose before decoration, one focal point, hierarchy over complexity, physical realism, no invented facts, client assets are primary identity references, decoration must have a reason. Brief source: ${copy}.`;
+ const neg=`distorted product, altered packaging, incorrect logo, incorrect proportions, unreadable text, misspelled text, extra text, duplicate text, generic AI decoration, purposeless floating objects, random particles, excessive glow, generic gradients, unnecessary splash, unnecessary smoke, fake lens flare, excessive bokeh, clutter, weak hierarchy`;
+ $('prompt').value=prompt;$('negative').value=neg;
+}
+
+
+let selectedAssets=[];
+let lastGeneratedDataUrl='';
+
+function bytesLabel(n){
+  if(n<1024) return n+' B';
+  if(n<1024*1024) return (n/1024).toFixed(0)+' KB';
+  return (n/1024/1024).toFixed(1)+' MB';
+}
+function setGenStatus(message, kind='warn'){
+  $('genStatus').className='notice '+kind;
+  $('genStatus').textContent=message;
+}
+function readAsDataURL(file){
+  return new Promise((resolve,reject)=>{
+    const r=new FileReader(); r.onload=()=>resolve(r.result); r.onerror=reject; r.readAsDataURL(file);
+  });
+}
+async function handleAssets(){
+  const files=Array.from($('assets').files||[]).slice(0,8);
+  selectedAssets=[];
+  $('assetList').innerHTML='';
+  if(!files.length){$('assetList').textContent='Belum ada asset dipilih.';return;}
+  for(const file of files){
+    const data=await readAsDataURL(file);
+    const item={name:file.name,mime:file.type||'application/octet-stream',size:file.size,data};
+    selectedAssets.push(item);
+    const card=document.createElement('div'); card.className='assetCard';
+    if(file.type.startsWith('image/')){
+      const img=document.createElement('img'); img.src=data; img.alt=file.name; card.appendChild(img);
+    }else{
+      const box=document.createElement('div'); box.style.cssText='aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;color:#706d67'; box.textContent=(file.name.split('.').pop()||'FILE').toUpperCase(); card.appendChild(box);
+    }
+    const meta=document.createElement('div'); meta.className='assetMeta'; meta.textContent=file.name+' · '+bytesLabel(file.size); card.appendChild(meta);
+    $('assetList').appendChild(card);
+  }
+  $('providerNotice').textContent=`${selectedAssets.length} reference asset siap dipakai AI. Asset adalah sumber identitas utama.`;
+}
+$('assets').addEventListener('change',()=>{handleAssets().catch(err=>{console.error(err);setGenStatus('Asset gagal dibaca: '+err.message,'danger');});});
+
+function selectedFormat(){
+  const v=$('format').value; return v==='auto'?infer($('brief').value).format:v;
+}
+async function generateWithAI({revisionText='' }={}){
+  const text=$('brief').value.trim();
+  if(!text){alert('Brief klien belum diisi.');return;}
+  render();
+  if(!selectedAssets.length && !lastGeneratedDataUrl){
+    // No asset is valid: AI will generate from the art-directed prompt.
+  }
+  const payload={
+    brief:text,
+    prompt:$('prompt').value,
+    negative:$('negative').value,
+    staff:$('staff').value,
+    format:selectedFormat(),
+    assets:selectedAssets.map(x=>({name:x.name,mime:x.mime,size:x.size,data:x.data}))
+  };
+  if(revisionText){
+    payload.prompt=[
+      'REVISION MODE. Use the current generated image as the locked baseline.',
+      'Change only what the staff explicitly requests below.',
+      'Preserve client facts, brand identity, product identity, format, hierarchy, and successful visual DNA.',
+      'Revision request: '+revisionText
+    ].join('\n\n');
+    payload.negative=$('negative').value;
+    if(lastGeneratedDataUrl) payload.assets=[{name:'current-generated-design.png',mime:'image/png',size:lastGeneratedDataUrl.length,data:lastGeneratedDataUrl}];
+  }
+  const button=$('generate');
+  const old=button.textContent; button.disabled=true; button.textContent=revisionText?'Generating Revision…':'Generating AI…';
+  $('downloadDesign').disabled=true;
+  setGenStatus(revisionText?'AI sedang menerapkan surgical revision…':'AI sedang membaca brief + reference dan membuat desain…','warn');
+  try{
+    const res=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const out=await res.json().catch(()=>({error:'Server mengembalikan response yang tidak valid.'}));
+    if(!res.ok || !out.ok) throw new Error(out.error||('Generation gagal ('+res.status+')'));
+    lastGeneratedDataUrl=out.image;
+    $('generatedImage').src=out.image; $('generatedImage').classList.remove('hidden');
+    $('preview').classList.add('hidden');
+    $('downloadDesign').disabled=false;
+    setGenStatus(`Generated • ${out.model} • ${out.usedReferences||0} reference • ${out.size}`,'ok');
+  }catch(err){
+    console.error(err);
+    setGenStatus('Generation gagal: '+err.message,'danger');
+  }finally{
+    button.disabled=false; button.textContent=old;
+  }
+}
+$('generate').onclick=()=>generateWithAI();
+$('downloadDesign').onclick=()=>{
+  if(!lastGeneratedDataUrl)return;
+  const a=document.createElement('a');a.href=lastGeneratedDataUrl;a.download='yudhania-ai-design.png';a.click();
+};
+$('copyPrompt').onclick=()=>navigator.clipboard.writeText($('prompt').value);
+$('copyAll').onclick=()=>navigator.clipboard.writeText(`FINAL GENERATION PROMPT\n${$('prompt').value}\n\nNEGATIVE PROMPT\n${$('negative').value}`);
+$('applyRevision').onclick=async()=>{
+  const r=clean($('revision').value); if(!r)return alert('Tulis revision request dulu.');
+  if(!lastGeneratedDataUrl){
+    $('revisionOut').classList.remove('hidden');
+    $('revisionText').textContent='Belum ada baseline generated image. Klik Generate Design terlebih dahulu.';
+    return;
+  }
+  $('revisionOut').classList.remove('hidden');
+  $('revisionText').textContent=`BASE DESIGN: generated image terakhir dikunci sebagai baseline.\n\nREQUESTED CHANGE: ${r}\n\nLOCK: client facts, brand identity, product/hero identity, format, hierarchy, dan elemen sukses lainnya.\n\nSTATUS: revision akan dikirim ke AI sebagai image edit.`;
+  await generateWithAI({revisionText:r});
+};
+</script>
+</body>
+</html>
