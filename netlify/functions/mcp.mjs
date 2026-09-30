@@ -322,15 +322,53 @@ function createServer() {
 
 const handler = createMcpHandler(createServer);
 
-export default {
-  fetch(request) {
-    const url = new URL(request.url);
-    if (url.pathname === "/") {
-      return new Response(JSON.stringify({ ok: true, service: "YUDHANIA.AI Design Studio MCP", endpoint: "/mcp" }), { headers: { "content-type": "application/json" } });
-    }
-    return handler.fetch(request);
+export default async function(request) {
+  const url = new URL(request.url);
+
+  if (request.method === "OPTIONS") {
+    return new Response(null, {
+      status: 204,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Accept, Authorization, Mcp-Session-Id, Last-Event-ID"
+      }
+    });
   }
-};
+
+  if (url.pathname === "/") {
+    return new Response(
+      JSON.stringify({
+        ok: true,
+        service: "YUDHANIA.AI Design Studio MCP",
+        endpoint: "/mcp"
+      }),
+      {
+        status: 200,
+        headers: {
+          "content-type": "application/json",
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
+    );
+  }
+
+  const response = await handler.fetch(request);
+
+  const headers = new Headers(response.headers);
+  headers.set("Access-Control-Allow-Origin", "*");
+  headers.set("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
+  headers.set(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Accept, Authorization, Mcp-Session-Id, Last-Event-ID"
+  );
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers
+  });
+}
 
 const UI_HTML = String.raw`<!doctype html>
 <html lang="id">
