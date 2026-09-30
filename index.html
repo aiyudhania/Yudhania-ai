@@ -52,12 +52,12 @@
       <div class="head"><h2>03 · Generate & Revision</h2><p>Workspace untuk output pertama dan revisi surgical.</p></div>
       <div class="body">
         <div id="preview" class="preview"><strong>DESIGN<br>READY</strong></div>
-        <div class="notice warn">Image generation provider belum dipasang di browser MVP ini. Prompt yang dihasilkan sudah siap dikirim ke generation boundary.</div>
+        <div class="notice warn">AI generation aktif melalui serverless generation boundary. API key tetap berada di server, bukan di browser.</div>
         <div class="section"><h3>Generated Design</h3>
         <div id="genStatus" class="notice warn">Belum ada desain yang di-generate.</div>
         <div class="previewWrap"><canvas id="designCanvas" width="1080" height="1920"></canvas></div>
         <div class="actions"><button id="generate" class="primary" type="button">Generate Design</button><button id="downloadDesign" class="secondary" type="button" disabled>Download PNG</button></div>
-        <div class="hint">Generate lokal ini membuat visual poster nyata dari brief yang sudah dianalisis. Ini bukan koneksi ke model gambar eksternal.</div>
+        <div class="hint">Generate mengirim brief + art direction + reference ke AI image generation server. API key tidak pernah dikirim ke browser.</div>
       </div>
       <div class="section"><h3>Revision Request</h3><textarea id="revision" class="revision" placeholder="Contoh: Font headline terlalu generic. Pertahankan layout, produk, warna, dan hierarki; ubah hanya personality typography."></textarea></div>
         <div class="actions"><button id="applyRevision" class="primary">Susun Surgical Revision</button></div>
@@ -157,7 +157,7 @@ function readAsDataURL(file){
   });
 }
 async function handleAssets(){
-  const files=Array.from($('assets').files||[]).slice(0,8);
+  const files=Array.from($('assets').files||[]).slice(0,3);
   selectedAssets=[];
   $('assetList').innerHTML='';
   if(!files.length){$('assetList').textContent='Belum ada asset dipilih.';return;}
@@ -205,6 +205,11 @@ async function generateWithAI({revisionText='' }={}){
     ].join('\n\n');
     payload.negative=$('negative').value;
     if(lastGeneratedDataUrl) payload.assets=[{name:'current-generated-design.png',mime:'image/png',size:lastGeneratedDataUrl.length,data:lastGeneratedDataUrl}];
+  }
+  const estimatedPayloadBytes = JSON.stringify(payload).length;
+  if(estimatedPayloadBytes > 4500000){
+    setGenStatus('Reference terlalu besar untuk serverless request. Gunakan maksimal 3 gambar yang lebih ringan.', 'danger');
+    return;
   }
   const button=$('generate');
   const old=button.textContent; button.disabled=true; button.textContent=revisionText?'Generating Revision…':'Generating AI…';
