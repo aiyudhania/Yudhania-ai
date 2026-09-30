@@ -1,9 +1,14 @@
 {
-  "name":"yudhania-ai-staff-app",
-  "version":"1.0.0",
-  "private":true,
-  "description":"YUDHANIA.AI staff design workspace with real OpenAI image generation and reference assets",
-  "main":"server.js",
-  "scripts":{"start":"node server.js"},
-  "engines":{"node":">=20"}
+  "name": "yudhania-ai-mcp-app",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.2",
+    "@modelcontextprotocol/ext-apps": "^1.0.1",
+    "zod": "^3.25.76"
+  }
 }
