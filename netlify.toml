@@ -6,3 +6,11 @@
 
 [functions."generate"]
   timeout = 60
+
+[functions."mcp"]
+  timeout = 60
+
+[[redirects]]
+  from = "/mcp"
+  to = "/.netlify/functions/mcp"
+  status = 200
