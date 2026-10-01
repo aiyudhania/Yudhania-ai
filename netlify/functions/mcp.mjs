@@ -369,7 +369,9 @@ function createServer() {
         style: z.string().optional()
       }),
       annotations: {
-        readOnlyHint: true
+  readOnlyHint: true,
+  destructiveHint: false,
+  openWorldHint: false
       },
       _meta: {
         ui: {
@@ -418,6 +420,11 @@ function createServer() {
         finalGenerationPrompt: z.string(),
         negativePrompt: z.string()
       }),
+      annotations: {
+  readOnlyHint: true,
+  destructiveHint: false,
+  openWorldHint: false
+},
       _meta: {
         ui: {
           resourceUri: RESOURCE_URI,
@@ -462,6 +469,11 @@ function createServer() {
         revisionInstruction: z.string(),
         dynamicNegative: z.string()
       }),
+      annotations: {
+  readOnlyHint: true,
+  destructiveHint: false,
+  openWorldHint: false
+},
       _meta: {
         ui: {
           resourceUri: RESOURCE_URI,
